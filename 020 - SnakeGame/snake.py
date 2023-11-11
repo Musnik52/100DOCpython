@@ -25,6 +25,13 @@ class Snake:
     def extend(self):
         self.add_turtle(self.turtles[-1].position())
 
+    def reset_pos(self):
+        for turtle in self.turtles:
+            turtle.goto(1000, 1000)
+        self.turtles.clear()
+        self.create()
+        self.head = self.turtles[0]
+
     def move(self):
         for turtle_i in range(len(self.turtles) - 1, 0, -1):
             new_x_pos = self.turtles[turtle_i - 1].xcor()

@@ -44,11 +44,13 @@ while playing:
         or snake.head.ycor() > 280
         or snake.head.ycor() < -280
     ):
-        playing = end_game()
+        scoreboard.restart()
+        snake.reset_pos()
 
     for turtle in snake.turtles[1:]:
         if snake.head.distance(turtle) < 10:
-            playing = end_game()
+            scoreboard.restart()
+            snake.reset_pos()
 
 
 screen.exitonclick()
