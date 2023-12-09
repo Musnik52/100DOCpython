@@ -20,8 +20,8 @@ while len(guessed) < len(state_list):
         title=f"{len(guessed)}/{len(state_list)} states guessed",
         prompt="Write a state's name",
     ).title()
-    
-    if player_answer == 'Exit':
+
+    if player_answer == "Exit":
         break
 
     if player_answer in state_list:
@@ -33,14 +33,12 @@ while len(guessed) < len(state_list):
         t.write(answer_row["state"].item())
         guessed.append(player_answer)
 
-for state in state_list:
-    if state in guessed:
-        state_list.remove(state)
+state_list = [state for state in state_list if state not in guessed]
+# for state in state_list:
+#     if state in guessed:
+#         state_list.remove(state)
 
-states_dict = {
-    'States_to_learn': state_list
-}
+states_dict = {"States_to_learn": state_list}
 
 states_data_file = pandas.DataFrame(states_dict)
-states_data_file.to_csv(r'025 - StatesGame\StatesToLearn.csv')
-
+states_data_file.to_csv(r"025 - StatesGame\StatesToLearn.csv")

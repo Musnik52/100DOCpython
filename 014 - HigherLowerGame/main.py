@@ -17,8 +17,11 @@ import os
 
 
 def replay():
-    print("You're amazing! you've finished the list!" if counter ==
-          max_score else f'Game Over! Your streak was: {counter}')
+    print(
+        "You're amazing! you've finished the list!"
+        if counter == max_score
+        else f"Game Over! Your streak was: {counter}"
+    )
     choice = input("Want to play again? y/n\n").lower()
     while choice not in ["y", "yes", "n", "no"]:
         choice = input("Want to play again? y/n\n").lower()
@@ -26,7 +29,7 @@ def replay():
 
 
 def clear():
-    os.system('cls')
+    os.system("cls")
 
 
 def msg_format(item):
@@ -36,7 +39,10 @@ def msg_format(item):
 def display(item1, item2):
     print(logo)
     print(
-        'Compare the following - Who has more followers?\n' if not counter else f'Correct! Streak: {counter}. Next:\n')
+        "Compare the following - Who has more followers?\n"
+        if not counter
+        else f"Correct! Streak: {counter}. Next:\n"
+    )
     print(f"1: {msg_format(item1)}")
     print(f"followers: {item1['follower_count']}")
     print(vs)
@@ -45,11 +51,10 @@ def display(item1, item2):
 
 def compare(item1, item2):
     display(item1, item2)
-    answers = [item1['follower_count'], item2['follower_count']]
-    player_answer = int(input(
-        'Who has a bigger number of IG followers? 1 or 2\n'))
+    answers = [item1["follower_count"], item2["follower_count"]]
+    player_answer = int(input("Who has a bigger number of IG followers? 1 or 2\n"))
     while player_answer not in [1, 2]:
-        player_answer = int(input('WRONG INPUT! Choose 1 or 2\n'))
+        player_answer = int(input("WRONG INPUT! Choose 1 or 2\n"))
     correct_answer = max(answers[0], answers[1])
     return item2 if answers[player_answer - 1] == correct_answer else 0
 
