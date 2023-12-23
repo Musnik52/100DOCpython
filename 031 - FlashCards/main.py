@@ -1,9 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
-from random import shuffle, choice, randint
+from random import choice
 import pandas
-import pyperclip
-import json
 
 
 BACKGROUND_COLOR = "#B1DDC6"
