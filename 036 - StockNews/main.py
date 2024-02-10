@@ -60,7 +60,7 @@ news_push = [
 ]
 
 
-if abs(stock_delta) >= 5:
+if abs(stock_delta) >= 3:
     client = Client(account_sid, auth_token)
     for push in news_push:
         message = client.messages.create(
