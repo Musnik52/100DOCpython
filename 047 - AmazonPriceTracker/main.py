@@ -1,7 +1,6 @@
 import requests
 import os
 import smtplib
-from pprint import pprint
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
