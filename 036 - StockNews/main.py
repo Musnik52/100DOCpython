@@ -4,8 +4,8 @@ import requests
 from twilio.rest import Client
 import datetime as dt
 
-STOCK = "GLBE"
-COMPANY_NAME = "Global-E Online Ltd"
+STOCK = "NVDA"
+COMPANY_NAME = "NVIDIA Corp"
 today = dt.date.today()
 yesterday = today - dt.timedelta(days=1)
 before_yesterday = dt.date.today() - dt.timedelta(days=2)
@@ -60,12 +60,12 @@ news_push = [
 ]
 
 
-if abs(stock_delta) >= 3:
+if abs(stock_delta) >= 0: # Adjust the % of the stock's change to your liking
     client = Client(account_sid, auth_token)
     for push in news_push:
         message = client.messages.create(
             body=push,
-            from_="+12014688388",
+            from_="+12202153460",
             to=os.getenv("my_phone_number"),
         )
         print(message.status)
