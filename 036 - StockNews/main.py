@@ -4,8 +4,10 @@ import requests
 from twilio.rest import Client
 import datetime as dt
 
-STOCK = "NVDA"
-COMPANY_NAME = "NVIDIA Corp"
+# best to search online for the following: 
+STOCK = "NVDA" #adjust company stock ticker
+COMPANY_NAME = "NVIDIA Corp" # adjust the company name
+
 today = dt.date.today()
 yesterday = today - dt.timedelta(days=1)
 before_yesterday = dt.date.today() - dt.timedelta(days=2)
